@@ -1,0 +1,31 @@
+.scroll-to-top {
+    position: fixed;
+    height: 2rem;
+    width: 2rem;
+    bottom: 2rem;
+    right: calc(2.5rem + (100vw - 100%));
+    margin: 0;
+    padding: 0;
+    
+    z-index: 40;
+    cursor: pointer;
+
+    background-color: white;
+    border-radius: 20%;
+}
+
+.scroll-to-top::before {
+    content: "arrow_upward";
+    color: black;
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+}
+
+.scroll-to-top:hover {
+    background-color: black;
+}
+
+.scroll-to-top:hover::before {
+    color: white;
+}

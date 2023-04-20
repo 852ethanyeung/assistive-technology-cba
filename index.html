@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethan Yeung's Assistive Technology CBA</title>
+
+    <!-- Stylesheet -->
+    <link href="styles/index.css" rel="stylesheet" />
+
+
+    <!-- Scripts -->
+    <!-- jQuery unfortuately has to be hardcoded in in every page. If I add this in with JS, the other scripts that use jQuery will load first and the page will break. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+
+    <!-- Main scripts -->
+    <script src="scripts/load-functions.js" defer></script>
+    <script src="scripts/index.js" defer></script>
+
+    <!-- Other scripts -->
+</head>
+
+<body>
+    <div>
+        <h1 data-text="Collision proximity detector" id="websiteIndexPageTitle">Collision proximity detector</h1>
+        <h2 data-text="Ethan Yeung's Coding CBA 2" id="websiteIndexPageSubtitle">Ethan Yeung's Coding CBA 2</h2>
+    </div>
+
+    <!-- Unfortunately this has to be hardcoded in in every page. If I add this in with JS, some elements may appear for a split second before this screen is added, ruining the fade-in effect. -->
+    <div class="pageFadeInScreen"
+        style="height: 100vh; width: 100vw; position: fixed; top: 0; background-color: black; z-index: 1000000"></div>
+</body>
+
+</html>

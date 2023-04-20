@@ -1,0 +1,188 @@
+/* Importing styles in */
+
+@layer universal-styles;
+
+@import url(style.css) layer(universal-styles);
+
+/* PT Mono font from Google fonts */
+@font-face {
+    font-family: "PT Mono";
+    src: url("fonts/pt-mono/PTMono-Regular.ttf");
+}
+
+/* Stylesheet */
+
+:root {
+    /* If you only use 100vw, it counts the width of the scrollbar in as well. This gets the "actual" screen width, without counting in the width of the scrollbar. */
+    --scrollbar-width: calc(100vw - 100%);
+    --full-screen-width: calc(100vw - var(--scrollbar-width));
+}
+
+body {
+    font-family: "PT Mono", monospace;
+}
+
+.text {
+    padding-inline: 15vw;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    line-height: 1.5;
+}
+
+/* Header */
+
+.header {
+    box-sizing: border-box;
+    width: var(--full-screen-width);
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+
+    background-color: black;
+}
+
+.header.text {
+    line-height: 1;
+}
+
+.header.text .title {
+    font-size: clamp(1.5rem, 7vw, 3rem);
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin-block-end: 1.25rem;
+}
+
+.header.image {
+    position: absolute;
+
+    width: var(--full-screen-width);
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+
+    z-index: -10;
+}
+
+.header.image-frame {
+    height: 60vw;
+    width: calc(0.8 * var(--full-screen-width));
+
+    position: relative;
+    left: calc(0.1 * var(--full-screen-width));
+
+    border: 4px solid white;
+    background-color: transparent;
+
+    padding: 0;
+}
+
+.header.image-frame::before, .header.image-frame::after {
+    height: inherit;
+    width: calc(0.2 * var(--full-screen-width));
+    position: absolute;
+    top: -4px;
+
+    content: "";
+
+    background-color: black;
+}
+
+.header.image-frame::before {
+    left: calc(-0.2 * var(--full-screen-width) - 4px);
+}
+
+.header.image-frame::after {
+    right: calc(-0.2 * var(--full-screen-width) - 4px);
+}
+
+.image-credit {
+    width: max-content;
+    padding: 0.1rem;
+
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+
+    font-size: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Parallax effect using perspective and transform (if screen is big enough) */
+
+.parallax-wrapper {
+    overflow-y: scroll;
+}
+
+@media screen and (min-width: 750px) {
+    .parallax-wrapper {
+        position: relative;
+
+        height: 100vh;
+        overflow-x: hidden;
+        perspective: 1px;
+    }
+
+    .header.image {
+        transform: translateZ(-1px) scale(2.1);
+    }
+
+    .header.image-frame {
+        height: clamp(10rem, 50vh, 25rem);
+    }
+}
+
+/* Body */
+
+.body {
+    width: var(--full-screen-width);
+    padding-top: 3rem;
+
+    background-color: black;
+}
+
+.body > .text {
+    clear: both;
+}
+
+.parallax-wrapper > :last-child {
+    padding-bottom: 3rem;
+    border-bottom: 0.5rem solid white;
+}
+
+/* Image blocks */
+
+.image-block {
+    padding-inline: 15vw;
+    height: max-content;
+    margin-block: 2rem;
+
+    display: grid;
+    column-gap: 2rem;
+    align-items: center;
+}
+
+.image-block.image-left {
+    grid-template-columns: 32vw 1fr;
+}
+
+.image-block.image-right {
+    grid-template-columns: 1fr 32vw;
+}
+
+.image-block.image-right .text {
+    text-align: right;
+}
+
+.image-block:first-child {
+    margin-block-start: 0;
+}
+
+.image-block:last-child {
+    margin-block-end: 0;
+}
+
+.image-block img {
+    width: 32vw;
+}
+
+.image-block .text {
+    padding-inline: 0;
+}

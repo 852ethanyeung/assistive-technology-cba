@@ -1,0 +1,49 @@
+@layer universal, dropdown-menu, scroll-to-top;
+
+@import url(functions/dropdown-menu.css) layer(dropdown-menu);
+@import url(functions/scroll-to-top.css) layer(scroll-to-top);
+
+@layer universal {
+    /* PT Mono font from Google fonts */
+    @font-face {
+        font-family: "PT Mono";
+        src: url("fonts/pt-mono/PTMono-Regular.ttf");
+    }
+
+    /* Basic styles applying to the whole page */
+
+    :root {
+        --background-color: black;
+        --text-color: white;
+    }
+
+    html {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
+    body {
+        background-color: var(--background-color);
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, a {
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        outline: none;
+    }
+}
