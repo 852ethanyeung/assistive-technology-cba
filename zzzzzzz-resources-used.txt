@@ -1,6 +1,8 @@
 https://www.w3schools.com/
 https://developer.mozilla.org/
 https://cssgradient.io
+https://jquery.com/
+https://pinetools.com/
 
 JQUERY: https://developers.google.com/speed/libraries/#jquery
 

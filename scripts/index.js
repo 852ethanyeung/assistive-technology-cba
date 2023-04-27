@@ -1,63 +1,34 @@
 $(document).ready(() => {
-    /* Hacker text effect (it plays once when loaded) */
+    $("#websiteIndexPageTitlesContainer").css("padding-block", ($("html").clientWidth - $("h1").css("width")) / 2);
 
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()=+,.?'";
-    let intervalList = [];
-    let hoverEvent = new Event("mouseover");
+    $.getScript("scripts/functions/dependent-functions/hacker-text-effect.js").done(() => {
+        /* Hacker text effect (it plays once when loaded) */
 
-    function hackerTextEffect(target) {
-        let interval = 0;
+        let hoverEvent = new Event("mouseover");
 
-        for (listItem of intervalList) {
-            if (listItem[0] === target.id) {
-                interval = target;
-                clearInterval(listItem[1]);
-                listItem[1] = hackerTextEffectInterval(target);
+        setTimeout(() => {
+            document.querySelector("h1").dispatchEvent(hoverEvent);
+            document.querySelector("h2").dispatchEvent(hoverEvent);
+        }, 500);
+
+        $("h1").on({
+            mouseenter: (event) => {
+                hackerTextEffect(event.target);
+            },
+            click: (event) => {
+                hackerTextEffect(event.target);
             }
-        }
+        });
 
-
-        if (interval === 0) {
-            interval = hackerTextEffectInterval(target);
-            intervalList.push([target.id, interval]);
-        }
-    }
-
-    function hackerTextEffectInterval(target) {
-        let iteration = 0;
-
-        let interval = setInterval(() => {
-            target.innerText = target.innerText
-                .split("")
-                .map((character, index) => {
-                    if (index < iteration) {
-                        return target.dataset.text[index];
-                    }
-
-                    return characters[Math.floor(Math.random() * characters.length)];
-                })
-                .join("");
-
-            if (iteration >= target.dataset.text.length) {
-                clearInterval(interval);
+        $("h2").on({
+            mouseenter: (event) => {
+                hackerTextEffect(event.target);
+            },
+            click: (event) => {
+                hackerTextEffect(event.target);
             }
-
-            iteration += 1 / 2;
-        }, 30);
-
-        return interval;
-    }
-
-    setTimeout(() => {
-        document.querySelector("h1").dispatchEvent(hoverEvent);
-        document.querySelector("h2").dispatchEvent(hoverEvent);
-    }, 500);
-
-    $("h1").on("mouseenter", (event) => {
-        hackerTextEffect(event.target);
-    });
-
-    $("h2").on("mouseenter", (event) => {
-        hackerTextEffect(event.target);
+        });
+    }).fail((jqxhr) => {
+        console.log(jqxhr.status);
     });
 });

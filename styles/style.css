@@ -45,5 +45,19 @@
 
     a {
         outline: none;
+        text-decoration: none;
+    }
+    
+    a.external-link {
+        padding-right: 0.75rem;
+        background-image: url("../images/external-link-icon.png");
+        background-repeat: no-repeat;
+        background-size: 0.75rem;
+        background-position: right top;
+        border-block-end: 1px solid white;
+    }
+
+    a.external-link:hover {
+        border: none;
     }
 }

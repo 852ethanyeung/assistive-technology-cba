@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Design ~ Ethan Yeung's Assistive Technology CBA</title>
+
+    <!-- Stylesheet -->
+    <link href="styles/article-pages.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <!-- jQuery unfortuately has to be hardcoded in in every page. If I add this in with JS, the other scripts that use jQuery will load first and the page will break. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+
+    <!-- Main scripts -->
+    <script src="scripts/functions.js" defer></script>
+    <script src="scripts/article-page.js" defer></script>
+
+    <!-- Other scripts -->
+</head>
+
+<body>
+    <!-- Where all the stuff is in -->
+    <div class="parallax-wrapper">
+        <div class="header text">
+            <p class="title">the design</p>
+            <p class="subtitle">Creating plans for the prototype.</p>
+        </div>
+
+        <div class="header image-frame">
+            <p class="header image-credit">Photo by <a href="https://www.istockphoto.com/portfolio/cexco"
+                    target="_blank">cexco</a>, on <a
+                    href="https://www.istockphoto.com/photo/engineering-blueprint-gm140220209-19415126"
+                    target="_blank">iStock</a></p>
+        </div>
+        <img src="images/headers/the-design.jpg" alt="Engineering blueprints" class="header image">
+
+        <div class="body">
+            <h1 class="text"></h1>
+        </div>
+    </div>
+    <!-- Unfortunately this has to be hardcoded in in every page. If I add this in with JS, some elements may appear for a split second before this screen is added, ruining the fade-in effect. -->
+    <div class="pageFadeInScreen"
+        style="height: 100vh; width: 100vw; position: fixed; top: 0; background-color: black; z-index: 1000000"></div>
+</body>
+
+
+
+</html>
