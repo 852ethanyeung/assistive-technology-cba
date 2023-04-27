@@ -83,7 +83,7 @@ html {
     display: none;
 }
 
-.dropdown-menu::after {
+.dropdown-menu .dropdown-menu-border {
     position: relative;
     bottom: 0;
     inline-size: 100vw;

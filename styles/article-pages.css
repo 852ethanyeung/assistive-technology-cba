@@ -20,6 +20,7 @@
 
 body {
     font-family: "PT Mono", monospace;
+    margin: 0;
 }
 
 .text {
@@ -118,15 +119,14 @@ h2.text {
 /* Parallax effect using perspective and transform (if screen is big enough) */
 
 .parallax-wrapper {
+    overflow-x: hidden;
     overflow-y: scroll;
+    position: relative;
+    height: 100vh;
 }
 
 @media screen and (min-width: 750px) {
     .parallax-wrapper {
-        position: relative;
-
-        height: 100vh;
-        overflow-x: hidden;
         perspective: 1px;
     }
 
