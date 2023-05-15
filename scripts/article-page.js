@@ -12,4 +12,17 @@ $(document).ready(() => {
             $(".header.image").css("top", ($(".header.text").outerHeight() + 560 - $(window).width()) / 16 + "rem");
         }
     });
+
+    $.getScript("scripts/functions/dependent-functions/hacker-text-effect.js").done(() => {
+        $("#the-website-hacker-text-effect-demo").on({
+            mouseenter: (event) => {
+                hackerTextEffect(event.target);
+            },
+            click: (event) => {
+                hackerTextEffect(event.target);
+            }
+        });
+    }).fail((jqxhr) => {
+        console.log(jqxhr.status);
+    });
 });

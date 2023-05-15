@@ -73,22 +73,15 @@ html {
 /* Menu itself */
 
 .dropdown-menu {
-    block-size: calc(100vh - 8px);
+    block-size: 100vh;
     inline-size: 100vw;
     background-color: black;
+    border-bottom: 8px solid white;
 
     z-index: 70;
     position: absolute;
     top: 0;
     display: none;
-}
-
-.dropdown-menu .dropdown-menu-border {
-    position: relative;
-    bottom: 0;
-    inline-size: 100vw;
-    block-size: 8px;
-    color: white;
 }
 
 /* Home button */

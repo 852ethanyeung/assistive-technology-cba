@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The process ~ Ethan Yeung's Assistive Technology CBA</title>
+
+    <!-- Stylesheet -->
+    <link href="styles/article-pages.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <!-- jQuery unfortuately has to be hardcoded in in every page. If I add this in with JS, the other scripts that use jQuery will load first and the page will break. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+
+    <!-- Main scripts -->
+    <script src="scripts/functions.js" defer></script>
+    <script src="scripts/article-page.js" defer></script>
+
+    <!-- Other scripts -->
+</head>
+
+<body>
+    <!-- Where all the stuff is in -->
+    <div class="parallax-wrapper">
+        <div class="header text">
+            <p class="title">the design</p>
+            <p class="subtitle">Creating plans for the prototype.</p>
+        </div>
+
+        <div class="header image-frame">
+            <p class="image-credit">Photo on <a
+                    href="https://store.fut-electronics.com/products/micro-bit-board"
+                    target="_blank">Future electronics</a></p>
+        </div>
+        <img src="images/headers/the-process.jpeg" alt="Micro:bit board" class="header image">
+
+        <div class="body">
+            <h1 class="text">Building</h1>
+            <p class="text">To build the system is as simple as replicating the steps in Tinkercad.</p>
+            <br>
+            <div class="image-block image-left">
+                <img src="images/the-process/build-1.jpg" class="media">
+                <p class="text">First, attach the micro:bit to the breakout board.</p>
+            </div>
+            <div class="image-block image-right">
+                <p class="text">Then, add a breadboard to the system and attach the ultrasonic distance sensor.</p>
+                <img src="images/the-process/build-2.jpg" class="media">
+            </div>
+        </div>
+    </div>
+    <!-- Unfortunately this has to be hardcoded in in every page. If I add this in with JS, some elements may appear for a split second before this screen is added, ruining the fade-in effect. -->
+    <div class="pageFadeInScreen"
+        style="height: 100vh; width: 100vw; position: fixed; top: 0; background-color: black; z-index: 1000000"></div>
+</body>
+
+
+
+</html>

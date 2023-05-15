@@ -29,12 +29,33 @@ body {
     line-height: 1.5;
 }
 
+.image-block .text {
+    margin-inline: 0;
+}
+
 h1.text {
     font-size: clamp(1.6rem, 6vw, 2rem);
 }
 
 h2.text {
     font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+}
+
+h3.text {
+    font-size: clamp(1.04rem, 3.9vw, 1.3rem);
+}
+
+.code {
+    margin-inline: 7.5vw;
+    padding-block: clamp(0.8rem, 3vw, 1rem);
+    padding-inline: clamp(2.4rem, 9vw, 3rem);
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    line-height: 1;
+    display: block;
+    width: 85vw;
+    border-radius: 1vw;
+    background-color: white;
+    color: black;
 }
 
 /* Header */
@@ -116,6 +137,10 @@ h2.text {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.image-credit a {
+    text-decoration: underline;
+}
+
 /* Parallax effect using perspective and transform (if screen is big enough) */
 
 .parallax-wrapper {
@@ -167,14 +192,23 @@ h2.text {
     display: grid;
     column-gap: 2rem;
     align-items: center;
+    position: relative;
 }
 
 .image-block.image-left {
     grid-template-columns: 32vw 1fr;
 }
 
+.image-block.image-left .image-credit {
+    right: calc(0.5rem + 15vw + 36.25vw);
+}
+
 .image-block.image-right {
     grid-template-columns: 1fr 32vw;
+}
+
+.image-block.image-right .image-credit {
+    right: calc(0.5rem + 15vw);
 }
 
 .image-block.image-right .text {
@@ -195,4 +229,26 @@ h2.text {
 
 .image-block .text {
     padding-inline: 0;
+}
+
+.image-block.just-image {
+    padding-inline: 20vw;
+    margin: 0;
+    width: 100vw;
+}
+
+.image-block.just-image .media {
+    width: 60vw;
+}
+
+.image-block.just-image .image-credit {
+    right: calc(0.5rem + 20vw);
+}
+
+#the-website-hacker-text-effect-demo {
+    font-size: clamp(0.75rem, 2.5vw, 2.5rem);
+    text-decoration: underline;
+    inline-size: max-content;
+    margin-inline: auto;
+    cursor: default;
 }

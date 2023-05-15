@@ -32,7 +32,7 @@
         </div>
 
         <div class="header image-frame">
-            <p class="header image-credit">Photo by <a href="https://www.istockphoto.com/portfolio/cexco"
+            <p class="image-credit">Photo by <a href="https://www.istockphoto.com/portfolio/cexco"
                     target="_blank">cexco</a>, on <a
                     href="https://www.istockphoto.com/photo/engineering-blueprint-gm140220209-19415126"
                     target="_blank">iStock</a></p>
@@ -40,7 +40,160 @@
         <img src="images/headers/the-design.jpg" alt="Engineering blueprints" class="header image">
 
         <div class="body">
-            <h1 class="text"></h1>
+            <h1 class="text">Concept</h1>
+            <p class="text">My idea is to make a collision detection system that can be attached to the body. Let’s say
+                the foot. It would be able to alert the user through stimulating a variety of different senses.</p>
+            <br>
+            <p class="text">As the user would be visually impaired or blind, a visual stimuli, such as flashing lights,
+                would be useless. There is also a high difficulty in stimulating the smell and taste senses of the user.
+                Therefore, it leaves me with two sense: sound and vibration.</p>
+            <br>
+            <h1 class="text">Design</h1>
+            <h2 class="text">Physical design</h2>
+            <p class="text">To design my artefact, I will be using <a href="https://www.tinkercad.com" target="_blank"
+                    class="external-link">Tinkercad</a>’s circuit design tool.</p>
+            <br>
+            <div class="image-block just-image">
+                <img src="images/the-design/tinkercad-logo.jpg" alt="The Tinkercad logo" class="media">
+                <p class="image-credit">Photo by <a href="https://logowik.com" target="_blank">Logowik</a> on its <a
+                        href="https://logowik.com/autodesk-tinkercad-logo-vector-55134.html" target="_blank">website</a>
+                </p>
+            </div>
+            <br>
+            <div class="image-block image-left">
+                <img src="images/the-design/step-1.png" class="media">
+                <p class="text">First, we need a Micro:bit. It will act as the "brains" of the system. The breakout
+                    block it is attached to expands its capabilities, and allows it to control more pins &#40;pins send
+                    electronic signals to components that they are connected to through wires&#41;.</p>
+            </div>
+            <div class="image-block image-right">
+                <p class="text">Then, we add an ultrasonic distance sensor to the system. A mini breadboard is used for
+                    organization. From here on, black wires represent "ground" wires only and red wires represent
+                    "power" wires only.</p>
+                <img src="images/the-design/step-2.png" class="media">
+            </div>
+            <div class="image-block image-left">
+                <img src="images/the-design/step-3.png" class="media">
+                <p class="text">Next, we add a piezoelectric buzzer to the system. It will buzz when it receives a
+                    signal. Note that the pins used in the design does not reflect the final build.</p>
+            </div>
+            <div class="image-block image-right">
+                <p class="text">Finally, we add a DC motor to the system, which will spin when it receives a signal,
+                    produce a vibration effect.</p>
+                <img src="images/the-design/step-4.png" class="media">
+            </div>
+            <h2 class="text">Program design</h2>
+            <p class="text">The program design will be simple, and will be divided into three parts. To show the design,
+                we will be using a Javascript syntax, but with text replacing methods and functions.</p>
+            <br>
+            <p class="text">The first part manages the ultrasonic distance sensor.</p>
+            <br>
+            <p class="text">We bind the ultrasonic distance sensor's "trigger" and "echo" pin to the breakout
+                board's pin α and β. The variable will be set a value in centimeters representing how far away the
+                sensor is from the nearest obstacle in front.</p>
+            <br>
+            <p class="code">
+                let distance = distance({trigger: α, echo: β}, {unit: "cm"});
+            </p>
+            <br>
+            <p class="text">The second part manages the motor and the buzzer.</p>
+            <br>
+            <p class="text">We make a new variable, that sets the interval in microseconds between each buzz or
+                vibration. The smaller the distance, the smaller the interval is. Let's assume at 10cm away the machine
+                will buzz or vibrate
+                every one-fifth of a second.</p>
+            <br>
+            <p class="code">
+                let distance = distance({trigger: α, echo: β}, {unit: "cm"});
+                let interval = distance * 20;
+            </p>
+            <br>
+            <p class="text">To prevent the interval being too big or too small, we need to set a limit. The machine will
+                only activate when the sensor is 50cm or less away from an obstacle. The interval will be shortest when
+                the sensor is 10cm away from an obstacle: it will not beep any faster even if the sensor is less than
+                10cm away from an obstacle.</p>
+            <br>
+            <p class="code">
+                let distance = distance({trigger: α, echo: β}, {unit: "cm"});
+                <br><br>
+                if (distance <= 50) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let interval = distance * 20;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;interval = distance <= 10 ? 200 : interval; <br>
+                        }
+            </p>
+            <br>
+            <p class="text">Lastly, we pass this into the buzzer and vibrator. (Note: repeatForever() and wait() are not actual
+                JavaScript functions)</p>
+            <br>
+            <p class="code">
+                while (true) {
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;let distance = distance({trigger: α, echo: β}, {unit: "cm"});
+                <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if (distance <= 50) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let interval = distance * 20;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interval = distance <= 10 ? 200 : interval; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;wait(interval);
+                        };
+            </p>
+            <br>
+            <p class="text">The last part manages the user interface.</p>
+            <br>
+            <p class="text">The user can press button A to toggle the buzzer on and off, and button B for the vibrator.
+            </p>
+            <br>
+            <p class="code">
+                while (true) {
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;let distance = distance({trigger: α, echo: β}, {unit: "cm"});
+                <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if (distance <= 50) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let interval = distance * 20;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interval = distance <= 10 ? 200 : interval; 
+                    <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (buzzerOn) {
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buzzer.buzz(200);
+                        <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (vibratorOn) {
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vibrator.vibate(200);
+                        <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;wait(interval);
+                        <br>
+                        };
+                        <br><br>
+                        var buttonA = microBit.buttonA;
+                        <br>
+                        var buttonB = microBit.buttonB;
+                        <br><br>
+                        var buzzerOn = true;
+                        <br>
+                        var vibratorOn = true;
+                        <br><br>
+                        buttonA.addEventListener("click", () => {
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;buzzerOn = buzzerOn === true ? false : true;
+                            <br>
+                        });
+                        <br><br>
+                        buttonB.addEventListener("click", () => {
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;vibratorOn = vibratorOn === true ? false : true;
+                            <br>
+                        });
+            </p>
         </div>
     </div>
     <!-- Unfortunately this has to be hardcoded in in every page. If I add this in with JS, some elements may appear for a split second before this screen is added, ruining the fade-in effect. -->

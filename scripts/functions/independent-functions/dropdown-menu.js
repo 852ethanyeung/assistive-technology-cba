@@ -11,7 +11,6 @@ $(document).ready(() => {
         $("<div></div>").append($("<a></a>").attr("href", "the-process.html").text("the process")),
         $("<div></div>").append($("<a></a>").attr("href", "the-website.html").text("the website")),
         $("<div></div>").append($("<a></a>").attr("href", "the-evaluation.html").text("the evaluation")))));
-    $(".dropdown-menu").append($("<div></div>").addClass("dropdown-menu-border"));
     if (window.location.pathname !== "/index.html") {
         $(".dropdown-menu").append($("<a></a>").addClass("home-icon").attr("href", "index.html").append($("<span></span>").addClass("material-symbols-outlined").text("home")));
     }

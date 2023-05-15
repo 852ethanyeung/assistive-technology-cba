@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The website ~ Ethan Yeung's Assistive Technology CBA</title>
+
+    <!-- Stylesheet -->
+    <link href="styles/article-pages.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <!-- jQuery unfortuately has to be hardcoded in in every page. If I add this in with JS, the other scripts that use jQuery will load first and the page will break. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+
+    <!-- Main scripts -->
+    <script src="scripts/functions.js" defer></script>
+    <script src="scripts/article-page.js" defer></script>
+
+    <!-- Other scripts -->
+</head>
+
+<body>
+    <!-- Where all the stuff is in -->
+    <div class="parallax-wrapper">
+        <div class="header text">
+            <p class="title">the website</p>
+            <p class="subtitle">Identifying key features and notable details of the website.</p>
+        </div>
+
+        <div class="header image-frame">
+            <p class="image-credit">Photo by <a href="https://www.istockphoto.com/portfolio/Yurich84"
+                    target="_blank">Yurich84</a>, on <a
+                    href="https://www.istockphoto.com/photo/program-code-javascript-php-html-css-of-site-web-development-programmer-workflow-gm1202250586-345079337"
+                    target="_blank">iStock</a></p>
+        </div>
+        <img src="images/headers/the-website.jpg" alt="A web designer's desktop" class="header image">
+
+        <div class="body">
+            <h1 class="text">Structure</h1>
+            <h2 class="text">Site structure</h2>
+            <p class="text">Every website needs a structure; without one, it would be a jumbled mess and a navigation
+                nightmare.
+                Since this website is very small, having only a few pages, I've settled with a home page and the rest as
+                article pages.</p>
+            <br>
+            <div class="image-block image-left">
+                <img src="images/the-website/website-structure-vscode-explorer.png" class="media">
+                <p class="text">Here is how it is organized from the developer's (my) view. "index.html" is the homepage
+                    (the website will automatically load this file in when loaded, and "index.html" will not show up in
+                    the URL), whilst the rest of the pages are named accordingly.</p>
+            </div>
+            <br>
+            <p class="text">Due to the small size of the website, I want to be able to access every page from any page.
+                For this, I need to use a navigation menu.</p>
+            <br>
+            <h3 class="text">Navigation menu</h3>
+            <br>
+            <div class="image-block just-image">
+                <img src="images/the-website/nav-menu-without-home-btn.png" class="media">
+            </div>
+            <br>
+            <p class="text">This is the navigation menu, accessible from every page. The user can hop to anywhere in
+                this small website with ease.</p>
+            <br>
+            <div class="image-block image-right">
+                <p class="text">The user can go back to the home page by clicking the home button, which only appears in
+                    the top-right corner of the navigation menu when the current page isn't the home page (it would be
+                    pointless).</p>
+                <img src="images/the-website/nav-menu-with-home-btn.png" class="media">
+            </div>
+            <br>
+            <h2 class="text">Page structure</h2>
+            <h3 class="text">Home page</h3>
+            <p class="text">As the website is very simple and small, I decided to make the home page simple, placing the
+                title and purpose of the website in the center.</p>
+            <br>
+            <div class="image-block just-image">
+                <img src="images/the-website/home-page.png" class="media">
+            </div>
+            <br>
+            <p class="text">The navigation menu can be accessed by clicking the pulsating button at the top; I will talk
+                more about this later.</p>
+            <br>
+            <h3 class="text">Content page</h3>
+            <p class="text">As all of my content pages are articles, I've decided to adopt an article format for them.
+            </p>
+            <br>
+            <p class="text">Each header has a title and a subtitle, as well as a header image, or "hero banner",
+                underneath.</p>
+            <br>
+            <div class="image-block just-image">
+                <img src="images/the-website/content-page-header.png" class="media">
+            </div>
+            <br>
+            <div class="image-block image-right">
+                <p class="text">Apart from the content itself, I've also added a "scroll to top" button that appears
+                    when the user has scrolled a certain amount.</p>
+                <img src="images/the-website/content-page-scroll-to-top-btn.png" class="media">
+            </div>
+            <br>
+            <h3 class="text">Article</h3>
+            <p class="text">Even the article itself needs structuring. As I want to add images to my website, I've made
+                it easy for me to put them either to the left or right of a block or text, or just by itself. For
+                demonstration, I will be using pictures of dogs from the internet.</p>
+            <br>
+            <div class="image-block image-left">
+                <p class="image-credit">Photo by <a href="https://www.flickr.com/photos/mcpig/"
+                        target="_blank">McPig</a>, on <a href="https://www.flickr.com/photos/mcpig/2203669161"
+                        target="_blank">Flickr</a></p>
+                <img src="images/the-website/dog-1.jpg" class="media">
+                <p class="text">Shiba Inu placed on the left.</p>
+            </div>
+            <br>
+            <div class="image-block image-right">
+                <p class="text">Dachshund placed on the right.</p>
+                <p class="image-credit">Photo by <a href="https://www.flickr.com/photos/78428166@N00/"
+                        target="_blank">Tony Alter</a>, on <a
+                        href="https://www.flickr.com/photos/78428166@N00/8517532784" target="_blank">Flickr</a></p>
+                <img src="images/the-website/dog-2.jpg" class="media">
+            </div>
+            <br>
+            <div class="image-block just-image">
+                <img src="images/the-website/dog-3.jpg" class="media">
+                <p class="image-credit">Photo on <a
+                        href="https://commons.wikimedia.org/wiki/File:11.10.2015_Samoyed_%28cropped%29.jpg"
+                        target="_blank">Wikimedia Commons</a></p>
+            </div>
+            <br>
+            <p class="text">Samoyed just by itself.</p>
+            <br>
+            <div class="image-block image-right">
+                <p class="text">I also need to credit the images that I have taken from the web. I have done so
+                    discreetly
+                    by adding the credits on the bottom right corner.</p>
+                <img src="images/the-website/img-credits.png" class="media">
+            </div>
+            <br>
+            <h1 class="text">Features</h1>
+            <h2 class="text">Hacker text effect</h2>
+            <p class=text>I wanted to make the home page a little less boring than plain text. After a bit of searching
+                on YouTube, I've decided to add a hacker text effect to the titles. It will automatically play once when
+                loaded, and will play again when hovered or clicked.</p>
+            <br>
+            <div class="image-block just-image">
+                <video src="images/the-website/home-page-hacker-text-effect.mp4" controls autoplay muted loop class="media"></video>
+            </div>
+            <br>Ò
+            <p class="text" data-text="Try it on me!" id="the-website-hacker-text-effect-demo">Try it on me!</p>
+            <br>
+            <p class="text">You can find the source code on <a></a>. Comments have been added to explain the code throughly.</p>
+        </div>
+    </div>
+    <!-- Unfortunately this has to be hardcoded in in every page. If I add this in with JS, some elements may appear for a split second before this screen is added, ruining the fade-in effect. -->
+    <div class="pageFadeInScreen"
+        style="height: 100vh; width: 100vw; position: fixed; top: 0; background-color: black; z-index: 1000000"></div>
+</body>
+
+
+
+</html>
