@@ -40,6 +40,8 @@
         <img src="images/headers/the-website.jpg" alt="A web designer's desktop" class="header image">
 
         <div class="body">
+            <p class="text">Note: resources used can be found in .</p>
+            <br>
             <h1 class="text">Structure</h1>
             <h2 class="text">Site structure</h2>
             <p class="text">Every website needs a structure; without one, it would be a jumbled mess and a navigation
@@ -130,7 +132,7 @@
                         target="_blank">Wikimedia Commons</a></p>
             </div>
             <br>
-            <p class="text">Samoyed just by itself.</p>
+            <p class="text" style="text-align: center;">Samoyed just by itself.</p>
             <br>
             <div class="image-block image-right">
                 <p class="text">I also need to credit the images that I have taken from the web. I have done so
@@ -146,12 +148,56 @@
                 loaded, and will play again when hovered or clicked.</p>
             <br>
             <div class="image-block just-image">
-                <video src="images/the-website/home-page-hacker-text-effect.mp4" controls autoplay muted loop class="media"></video>
+                <video src="images/the-website/home-page-hacker-text-effect.mp4" controls autoplay muted loop
+                    class="media"></video>
             </div>
-            <br>Ò
+            <br>
             <p class="text" data-text="Try it on me!" id="the-website-hacker-text-effect-demo">Try it on me!</p>
             <br>
-            <p class="text">You can find the source code on <a></a>. Comments have been added to explain the code throughly.</p>
+            <p class="text">You can find the source code on <a
+                    href="https://github.com/852ethanyeung/assistive-technology-cba/blob/main/scripts/functions/dependent-functions/hacker-text-effect.js"
+                    target="_blank" class="external-link">GitHub</a>. Comments have been added to explain the code throughly.</p>
+            <br>
+            <h2 class="text">Button hover animations</h2>
+            <p class="text">In the website, there are several buttons that when hovered, seemingly appears to slide text
+                out. This is actually created without using any Javascript; it is made possible using CSS's :hover
+                pseudo-class and transition property, which helps create animations based on the changes of other
+                properties, such as position and size.
+            </p>
+            <br>
+            <div class="image-block image-right">
+                <p class="text">For example, the navigation menu button.</p>
+                <video src="images/the-website/nav-btn-hover-fx.mp4" controls autoplay muted loop class="media"></video>
+            </div>
+            <br>
+            <h2 class="text">Navigation menu animations</h2>
+            <p class=text>Apart from the sliding of the menu itself (which only requires one line in JavaScript thanks
+                to JQuery), each link in the menu also has an animation on hover.</p>
+            <br>
+            <div class="image-block image-left">
+                <video src="images/the-website/nav-menu-item-hover-fx.mp4" controls autoplay muted loop
+                    class="media"></video>
+                <p class="text">This is also made without JavaScript, but using CSS ::before and ::after pseudo-elements
+                    and :hover pseudo-class along with the transition property. When hovered, the sizes of ::before and
+                    ::after changes height and width, with timing controlled by delays. The border of the item isn't
+                    actually the border property of the item itself, but rather the ones of its ::before and ::after.
+                </p>
+            </div>
+            <br>
+            <h2 class="text">Parallax scrolling</h2>
+            <p class="text">Parallax scrolling refers to when different elements are scrolled, they move at different
+                speeds. It is used in webpages to create a depth effect, like how on a car poles close by move fast,
+                while scenery afar move slow. Here, it is applied to the header images of each article, again by only
+                using CSS. I created a new scrolling context, as well as used properties such as perspective and
+                translateZ to create the effect.</p>
+            <br>
+            <div class="image-block just-image">
+                <video src="images/the-website/parallax-scrolling.mp4" controls autoplay muted loop
+                    class="media"></video>
+            </div>
+            <br>
+            <p class="text">Note that this effect is disabled on narrow devices such as phones (using CSS media
+                queries).</p>
         </div>
     </div>
     <!-- Unfortunately this has to be hardcoded in in every page. If I add this in with JS, some elements may appear for a split second before this screen is added, ruining the fade-in effect. -->

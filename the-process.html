@@ -32,8 +32,7 @@
         </div>
 
         <div class="header image-frame">
-            <p class="image-credit">Photo on <a
-                    href="https://store.fut-electronics.com/products/micro-bit-board"
+            <p class="image-credit">Photo on <a href="https://store.fut-electronics.com/products/micro-bit-board"
                     target="_blank">Future electronics</a></p>
         </div>
         <img src="images/headers/the-process.jpeg" alt="Micro:bit board" class="header image">
@@ -41,7 +40,6 @@
         <div class="body">
             <h1 class="text">Building</h1>
             <p class="text">To build the system is as simple as replicating the steps in Tinkercad.</p>
-            <br>
             <div class="image-block image-left">
                 <img src="images/the-process/build-1.jpg" class="media">
                 <p class="text">First, attach the micro:bit to the breakout board.</p>
@@ -49,6 +47,48 @@
             <div class="image-block image-right">
                 <p class="text">Then, add a breadboard to the system and attach the ultrasonic distance sensor.</p>
                 <img src="images/the-process/build-2.jpg" class="media">
+            </div>
+            <div class="image-block image-left">
+                <img src="images/the-process/build-3.jpg" class="media">
+                <p class="text">Next, add a piezoelectric buzzer to the system.</p>
+            </div>
+            <div class="image-block image-right">
+                <p class="text">Lastly, add a very, VERY ad-hoc vibration motor made with a DC motor and blue-tac to the
+                    system.</p>
+                <img src="images/the-process/build-4.jpg" class="media">
+            </div>
+            <h1 class="text">Coding</h1>
+            <p class="text">Here, we will replicate the steps planned previously.</p>
+            <div class="image-block image-left">
+                <img src="images/the-process/code-1.png" class="media">
+                <p class="text">Create an infinite loop, bind the ultrasonic distance sensor to pins, and get a reading
+                    in centimeters every repitition.</p>
+            </div>
+            <div class="image-block image-right">
+                <p class="text">Convert the sensor reading into a value used for timing.</p>
+                <img src="images/the-process/code-2.png" class="media">
+            </div>
+            <div class="image-block image-left">
+                <img src="images/the-process/code-3.png" class="media">
+                <p class="text">Set a minimum & maximum value for the interval variable. A minimum value is needed to
+                    ensure there is an adequate delay between each repitition to prevent crashes; a maximum value is
+                    needed to ensure the repition will eventually occur, no matter how far away the sensor is from an
+                    obstacle.</p>
+            </div>
+            <div class="image-block image-right">
+                <p class="text">Set the delay between each repitition as the interval variable.</p>
+                <img src="images/the-process/code-4.png" class="media">
+            </div>
+            <div class="image-block image-left">
+                <img src="images/the-process/code-5.png" class="media">
+                <p class="text">Bind the vibrator to a pin (the buzzer is automatically bound to the system), add code
+                    to buzz or vibrate every repitition if obstacle is close enough, and add ability for user to turn
+                    buzzer and vibrator on and off.</p>
+            </div>
+            <h1 class="text">Finished product & demonstration</h1>
+            <br>
+            <div class="image-block just-image">
+                <video src="images/the-process/demo.mp4" controls class="media"></video>
             </div>
         </div>
     </div>

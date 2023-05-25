@@ -1,0 +1,22 @@
+References:
+https://www.w3schools.com/
+https://developer.mozilla.org/
+https://jquery.com/
+https://sites.google.com/clongowes.net/microblocksbasicexamples
+
+JQUERY: https://developers.google.com/speed/libraries/#jquery
+
+Other programming tools:
+https://cssgradient.io
+
+Media processing tools:
+https://pinetools.com/
+https://cloudconvert.com/
+https://www.remove.bg/
+
+Hacker effect: https://www.youtube.com/watch?v=W5oawMJaXbU https://kprverse.com/
+PT Mono font: https://fonts.google.com/specimen/PT+Mono
+Pulsing button: https://www.jqueryscript.net/animation/Simple-Pulsating-Circle-Animation-with-jQuery-jPulse-Plugin.html
+Menu link effect: https://codepen.io/Marina_Os/pen/OJyWPbL
+
+Image credits can be found on bottom right corner of images; images without credits are made by me
